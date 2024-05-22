@@ -9,6 +9,7 @@
     "format": "prettier --write .",
     "prepare": "husky install",
     "common": "pnpm --filter common",
+    "cm-components": "pnpm --filter cm-components",
     "app": "pnpm --filter web-app",
     "my-app": "pnpm --filter my-app"
   },

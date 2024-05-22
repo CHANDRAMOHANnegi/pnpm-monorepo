@@ -1,5 +1,4 @@
 import type { StorybookConfig } from '@storybook/nextjs';
-const path = require('path');
 
 const config: StorybookConfig = {
   stories: ['../**/*.mdx', '../**/*.stories.@(ts|tsx)'],

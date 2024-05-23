@@ -1,25 +1,29 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useState } from 'react';
+import { SearchInput } from './search-input';
+import { List } from './list';
 
-const DropdownContainerWrapper = ({ children }: { children: ReactNode }) => (
-  <div className="">{children}</div>
+const DropdownContainer = ({ children }: { children: ReactNode }) => (
+  <div className="border border-dotted border-2 border-amber-800 p-l">
+    {children}
+  </div>
 );
+
 const Head = ({ children }: { children: ReactNode }) => (
-  <div className="">{children}</div>
-);
-const ListWrapper = ({ children }: { children: ReactNode }) => (
-  <div className="">{children}</div>
-);
-
-const SearchWrapper = ({ children }: { children: ReactNode }) => (
-  <div className="">{children}</div>
+  <div className="border border-dotted border-2 border-amber-800 p-l ">
+    {children}
+  </div>
 );
 
-const OptionsWrapper = ({ children }: { children: ReactNode }) => (
-  <div className="">{children}</div>
+const SearchContainer = ({ children }: { children: ReactNode }) => (
+  <div className="border border-dotted border-2 border-amber-800 p-l">
+    {children}
+  </div>
 );
 
-const SearchInputWrapper = ({ children }: { children: ReactNode }) => (
-  <div className="">{children}</div>
+const OptionsContainer = ({ children }: { children: ReactNode }) => (
+  <div className="border border-dotted border-2 border-amber-800 p-l">
+    {children}
+  </div>
 );
 
 const options = [
@@ -30,30 +34,25 @@ const options = [
 ];
 
 export const Dropdown = () => {
+  const [query, setQuery] = useState('');
+
+  console.log(query);
+
   return (
-    <DropdownContainerWrapper>
+    <DropdownContainer>
       <Head>
         <div className="text-slate-700">Dropdown</div>
       </Head>
-      <ListWrapper>
-        <SearchWrapper>
-          <SearchInputWrapper>
-            <input
-              name="search"
-              className="search"
-              placeholder="search"
-              value={''}
-            />
-          </SearchInputWrapper>
-        </SearchWrapper>
-        <OptionsWrapper>
-          {options.map((option) => (
-            <>
-              <div className="text-center">{option.label}</div>
-            </>
-          ))}
-        </OptionsWrapper>
-      </ListWrapper>
-    </DropdownContainerWrapper>
+      <OptionsContainer>
+        <SearchContainer>
+          <SearchInput query={query} setQuery={setQuery} />
+        </SearchContainer>
+        <OptionsContainer>
+          <List options={options} />
+        </OptionsContainer>
+      </OptionsContainer>
+    </DropdownContainer>
   );
 };
+
+export default Dropdown;

@@ -3,7 +3,7 @@ import { tableDataJson } from './tableData';
 import TableBody from './table-body';
 import TableHead from './table-head';
 import './style.css';
-import { useSort } from '@/hooks/useSort/useSort';
+import { useSort } from '../../hooks/useSort/useSort';
 
 type Primitive = Record<string, string | number | null>;
 

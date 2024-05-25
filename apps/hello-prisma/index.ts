@@ -10,8 +10,8 @@ async function main() {
             posts: {
                 create: {
                     title: 'My first post',
-                    body: 'Lots of really interesting stuff',
-                    slug: 'my-first-post',
+                    content: 'Lots of really interesting stuff',
+                    published: false
                 },
             },
         },

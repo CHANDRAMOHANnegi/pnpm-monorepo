@@ -1,13 +1,13 @@
 "use client"
-import VideoPlayer from "@/components/video-player";
+import { MyButtonComponent, CMVideoPlayer as VideoPlayer } from "cm-component";
 import { useRef } from "react";
 import videojs from "video.js";
 import Player from "video.js/dist/types/player";
 
 function App() {
-  const playerRef = useRef<Player>(null);
+  const playerRef = useRef<Player | null>(null);
   const videoLink =
-    "http://localhost:8000/uploads/courses/edeeb903-90fb-4539-bfbb-60537291ffc8/index.m3u8";
+    "http://localhost:8000/uploads/courses/4d92fb21-1ec9-44c3-be53-6382d6a75414/index.m3u8";
   const videoPlayerOptions = {
     controls: true,
     responsive: true,
@@ -41,6 +41,7 @@ function App() {
         options={videoPlayerOptions}
         onReady={handlePlayerReady}
       />
+      {/* <MyButtonComponent /> */}
     </>
   );
 }

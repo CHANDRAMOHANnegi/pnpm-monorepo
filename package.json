@@ -3,15 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "workspaces":["apps","packages"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "format": "prettier --write .",
     "prepare": "husky install",
     "common": "pnpm --filter common",
-    "cm-components": "pnpm --filter cm-components",
+    "cm-component": "pnpm --filter cm-component",
     "app": "pnpm --filter web-app",
-    "my-app": "pnpm --filter my-app"
+    "next-app": "pnpm --filter next-app"
   },
   "keywords": [],
   "author": "",
@@ -31,7 +32,9 @@
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
-    "typescript-eslint": "^7.9.0"
+    "typescript-eslint": "^7.9.0",
+    "video.js": "^8.12.0"
+
   },
   "lint-staged": {
     "**/*.{js,ts,tsx}": [

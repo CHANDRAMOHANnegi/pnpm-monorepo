@@ -1,4 +1,4 @@
-import Card from "../card"
+import Card from "../../card"
 
 export type ListDataProp = Record<string, string>
 

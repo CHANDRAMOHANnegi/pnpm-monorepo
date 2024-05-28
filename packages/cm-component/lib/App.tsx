@@ -2,7 +2,8 @@ import { useRef } from "react";
 import videojs from "video.js";
 import Player from "video.js/dist/types/player";
 import 'video.js/dist/video-js.css';
-import { D2List, CMVideoPlayer as VideoPlayer } from './index'
+import { Chip, D2List, CMVideoPlayer as VideoPlayer } from './index'
+import LinearList from "./components/list/h-linear-list";
 
 function App() {
   const playerRef = useRef<Player | null>(null);
@@ -40,6 +41,11 @@ function App() {
             onReady={handlePlayerReady}
           />
         </div>
+        <LinearList>
+          <Chip text="cm" type="filled" />
+          <Chip text="cm" type="outlined" />
+          <Chip text="cm" type="filled" />
+        </LinearList>
         <D2List data={[
           { key: "1", label: "hello", url: videoLink },
           { key: "2", label: "hello 2", url: videoLink },

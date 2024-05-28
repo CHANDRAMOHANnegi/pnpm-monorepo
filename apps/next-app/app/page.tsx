@@ -1,5 +1,6 @@
 "use client"
-import { CMVideoPlayer as VideoPlayer } from "cm-component";
+import { CMVideoPlayer as VideoPlayer, } from "../components/video-player";
+import { D2List } from 'cm-component'
 import { useRef } from "react";
 import videojs from "video.js";
 import Player from "video.js/dist/types/player";
@@ -33,13 +34,25 @@ function App() {
   };
   return (
     <>
-      <div>
-        <h1>Video player</h1>
+      <div className="flex justify-center items-center flex-col">
+        <h1 className="">Video player</h1>
+        <div className="border ">
+          <VideoPlayer
+            options={videoPlayerOptions}
+            onReady={handlePlayerReady}
+          />
+        </div>
+        <div>
+          <D2List data={[
+            { key: "1", label: "hello", url: videoLink },
+            { key: "2", label: "hello 2", url: videoLink },
+            { key: "3", label: "hello 3", url: videoLink },
+            { key: "4", label: "hello", url: videoLink },
+            { key: "5", label: "hello 2", url: videoLink },
+            { key: "6", label: "hello 3", url: videoLink },
+          ]} />
+        </div>
       </div>
-      <VideoPlayer
-        options={videoPlayerOptions}
-        onReady={handlePlayerReady}
-      />
     </>
   );
 }

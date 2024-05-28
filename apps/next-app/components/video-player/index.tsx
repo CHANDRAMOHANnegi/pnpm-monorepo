@@ -3,7 +3,7 @@ import videojs from "video.js";
 import Player from "video.js/dist/types/player";
 import "video.js/dist/video-js.css";
 
-export const VideoPlayer = (props: any) => {
+export const CMVideoPlayer = (props: any) => {
     const videoRef = useRef<HTMLDivElement>(null);
     const playerRef = useRef<Player | null>(null);
     const { options, onReady } = props;
@@ -51,4 +51,4 @@ export const VideoPlayer = (props: any) => {
     );
 };
 
-export default VideoPlayer;
+export default CMVideoPlayer;
